@@ -39,10 +39,8 @@ module Headhunter
     private
 
     def precompile_assets!
-      log.print "\nPrecompiling assets for Headhunter...".yellow
       remove_assets! # Remove existing assets! This seems to be necessary to make sure that they don't exist twice, see http://stackoverflow.com/questions/20938891
       system 'rake assets:precompile HEADHUNTER=false &> /dev/null'
-      log.puts " done!\n".yellow
     end
 
     def remove_assets!
